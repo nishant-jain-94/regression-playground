@@ -1,5 +1,10 @@
 import numpy as np
 
+def generating_data(n, m=2.25, b=6.0, stddev=1.5):
+    x = np.linspace(-2.0, 2.0, n)
+    y = x * m + b
+    return x, y
+
 def compute_cost(X, Y, m, c):
     """Computes the cost of the function for the given parameters. 
     
@@ -36,3 +41,6 @@ def gradient_descent(X, Y, nsteps, step_size=0.1):
         m -= dm
         c -= dc
         yield m, c, compute_cost(X, Y, m, c)
+
+
+generating_data(50)
