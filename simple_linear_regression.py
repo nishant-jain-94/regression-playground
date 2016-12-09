@@ -15,13 +15,13 @@ def compute_cost(X, Y, m, c):
     m, c - refers to the slope and intercept respectively
 
     Output:
-    Returns Residual Sum of Squares.
+    Returns Mean Square Error.
     """
     
     Yhat = m * X + c
     diff = Yhat - Y
-    residual_sum_of_squares = np.dot(diff.T, diff) / X.shape[0]
-    return residual_sum_of_squares.flat[0]
+    mean_square_error = np.dot(diff.T, diff) / X.shape[0]
+    return mean_square_error.flat[0]
 
 
 def gradient_descent(X, Y, nsteps, step_size=0.0001):
